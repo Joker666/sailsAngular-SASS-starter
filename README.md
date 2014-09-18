@@ -1,3 +1,3 @@
-# starter app
+# ngSailsApp
 
 a [Sails](http://sailsjs.org) application

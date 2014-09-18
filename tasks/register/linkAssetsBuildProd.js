@@ -1,10 +1,13 @@
-module.exports = function (grunt) {
-	grunt.registerTask('linkAssetsBuildProd', [
-		'sails-linker:prodJsRelative',
-		'sails-linker:prodStylesRelative',
-		'sails-linker:devTpl',
-		'sails-linker:prodJsRelativeJade',
-		'sails-linker:prodStylesRelativeJade',
-		'sails-linker:devTplJade'
-	]);
+module.exports = function (gulp, plugins) {
+	gulp.task('linkAssetsBuildProd', function(cb) {
+		plugins.sequence(
+			'sails-linker-gulp:prodJsRelative',
+			'sails-linker-gulp:prodStylesRelative',
+			'sails-linker-gulp:devTpl',
+			/*'sails-linker-gulp:prodJsRelativeJade',
+			'sails-linker-gulp:prodStylesRelativeJade',
+			'sails-linker-gulp:devTplJade' */
+			cb
+		);
+	});
 };

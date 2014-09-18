@@ -1,4 +1,4 @@
-var app = angular.module('todoMVC', [
+var app = angular.module('movies', [
   'ui.router',
   'ngAnimate',
   'ui.utils',
